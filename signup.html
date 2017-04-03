@@ -1,0 +1,63 @@
+
+<!DOCTYPE HTML>
+<head>
+<link rel="stylesheet" href="style.css">
+<title>Sign Up</title></head>
+<body>
+<nav id="mainnav">
+<!-- Nav should navigate around the site -->
+<ul>
+<li><a href="index.html"><img src="http://www.clker.com/cliparts/2/f/c/b/1341944217708273455House%20Silhouette%20Icon.svg.med.png"/></a></li>
+<li><a href="#">About</a></li>
+  <!--<img src="https://cdn.pixabay.com/photo/2014/12/05/13/51/information-558020_960_720.png"> image for the about link-->
+<li><a href="#">Contact</a></li></ul>
+  <!--<img src="http://www.parelca.com.ve/wp-content/uploads/2016/08/plainicon.com-40268-512px.png"> for the contact link-->
+<div id="search">
+<form role="search" id= "searching" method="get" class="search"> <!-- also must action to page -->
+<input name="searchitem" type="search" placeholder="Search"/></li>
+<input type="submit" value="Go"/>
+</form>
+</div>
+</nav>
+<div id="form_wrapper">
+<header>
+
+<!-- Header should contain brandings like logo-->
+<h1 class="uppercase">Sign up</h1>
+</header>
+<article id="art1">
+<!-- removed <div and replaced with article-->
+<!-- Inline CSS below: -->
+<section>
+<h1 class="capitalize">For returning users</h1>
+</section>
+<!-- End of inline CSS -->
+<section><form name="myForm" class="form" action = "http://wilder.azurewebsites.net/echo" method = "POST" onsubmit="return validateForm()">
+<input type="text"  maxlength=30 name="firstname" placeholder="First Name" id="userinput">
+<input type="text"  maxlength=30 name="surname" placeholder="Surname" id="userinput"><br/>
+<input type="text" name="email" placeholder="Email Address" id="userinput">
+<input type="text" name="confirmemail" placeholder="Confirm Email Address" id="userinput"><br/>
+<br><input type="date" name="birthay"><br><br>
+<input type= "radio" name= "gender" value = "male"/>Male
+<input type= "radio" name= "gender" value = "female"/>Female<br/><br/><br/>
+<input type="password" name="password" placeholder="New Password" maxlength="10" id="userinput"><br/>
+<input type="password" name="confirmpassword" placeholder="Confirm Password" maxlength="10" id="userinput"><br/>
+<br/><br/><br/><br/><br/>
+  <input type="submit" value="Submit" class="submit"/></form>
+</section><!--
+<section><p>Just testing to see section 2</p></section>
+<aside><p>Just testing to view aside</p></aside>
+</article>--></div>
+<footer id="centernav">
+<ul>
+<li id="contact">Contact Information</li>
+<li>Social Media</li>
+<li><a class="white" href="www.facebook.com">Facebook</a></li>
+<li><a href="www.twitter.com" class="white">Twitter</a></li>
+<li><a href="https://www.linkedin.com/feed/" class="white">Linkedin</a></li>
+      <li>Privacy Policy</li>
+	  <li>Copyright Information</li>
+	  <li>Terms of Service</li>
+  </ul></footer>
+  </body>
+</html>

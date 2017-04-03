@@ -1,0 +1,206 @@
+html
+{
+  	/*background-color:#eee;*/
+background-image:url("http://cdn.wallpapersafari.com/40/92/HvIEnr.png");
+  background-repeat: no-repeat center center fixed;
+  background-size: cover;
+  /*use these so it works in all browsers
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  */
+}
+.search{
+  position:fixed;
+  top: 20px;
+  right: 120px;
+}
+img{
+	width:30px;
+	height:25px;
+}
+body
+{
+
+margin: 0 auto;
+padding: 2;
+position: fixed;
+overflow: scroll;
+width: 100%;
+top: -20px;
+right: -40px;
+bottom: -40px;
+
+text-align: center;
+
+	font-family:"Century Gothic";
+	padding: 20px;
+	
+}
+h1.capitalize
+{
+	text-transform:capitalize;
+	letter-spacing: 2px;
+	color: #ffffff;
+	line-height: 0;
+	font-size: 17px;
+	word-spacing: 5px;
+	text-shadow: 3px 2px black;
+}
+h1.uppercase {
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	line-height: 0.1;
+	font-size: 60px;
+	text-shadow: 5px 4px gray;
+}
+#mainvav{
+	position: fixed;
+  text-align: left;
+	text-decoration: none;
+}
+p
+{
+   color: #000000;
+}
+.form{
+	line-height: 0.5;
+}
+input[type=text] {
+	width: 200px;
+	height: 10px;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 1px solid black;
+	border-radius: 2px;
+	
+}
+input[type=radio] {
+	font-size: 2px;
+	
+}
+input[type=text]:focus{
+	background-color: #FFFF99;
+	color:black;
+}
+#form_wrapper{
+	width: 720px;
+	height: 420px;
+	padding: 5px;
+	/*border: 5px solid black;*/
+	border-radius: 8px;
+	margin: 0 auto;
+	background-color:transparent #c0c0c0;
+  margin-top: 100px;
+	
+}
+nav
+{
+	height:40px;
+	background: #AAFFFFFF;
+
+}
+#searching{
+	text-align: center;
+	float: right;
+  margin-right: 100px;
+}
+input{
+	text-align: center;
+}
+
+
+footer
+{
+	
+
+	margin-top: 200px;
+  height:40px;
+	background: #eee;
+    /*font-size: px;*/
+  /*background: #transparent;*/
+	
+
+}
+footer ul{
+	margin:	50;
+	padding:25;
+	
+}
+nav ul{
+	margin:50;
+	padding:0;
+}
+footer ul li{
+  margin-top: 10px;
+	font-size: 10px;
+	list-style:none;
+	text-decoration:none;
+  text-align: center;
+	display:inline-block;
+	padding: 15px 20px;
+	color: white;
+  dislay: inline-block;
+  margin-top: 20px;
+}
+
+nav ul li{
+	list-style:none;
+}
+nav ul li a{
+	text-decoration:none;
+float:left;
+	display:inline-block;
+	padding: 10px 20px;
+	color: white;
+  
+}
+nav ul li a:hover{
+	*/color:#8C73DF;*/
+	text-decoration: underline;
+}
+
+
+
+
+
+#container ul li a:hover
+
+{
+	list-style:none;
+	
+}
+
+#centernav{
+  text-align: center;
+}
+
+#mainnav {
+font-size: 0.75em;
+}
+
+/*Footer Style*/
+.white{
+  color:black;
+}
+/*Footer Hover styles*/
+footer ul li a:hover{
+	color:blue;
+	text-decoration: bold underline;
+  font-size: 1em;
+}
+/*Visited and active link styles*/
+footer ul li a:visited{
+  color:black;
+  text-decoration: none;
+}
+footer ul li a:{
+  color:black;
+  text-decoration: none;
+}
+.formlinks
+{
+  font-size: 12px;
+}
+
