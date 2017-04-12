@@ -1,9 +1,12 @@
-
 <!DOCTYPE HTML>
+<html ng-app>
+    <!--Stating that this application is controlled by Angular-->
 <head>
-<link rel="stylesheet" href="style.css">
-<title>Sign Up</title></head>
-<body>
+<link rel="stylesheet" href="signup.css">
+<script src="signup.js"></script>
+<script data-require="angular.js@*" data-semver="1.4.9-beta.5" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+<title>Sign Up</title></head> 
+<body ng-controller="MainCtrl">
 <nav id="mainnav">
 <!-- Nav should navigate around the site -->
 <ul>
@@ -23,20 +26,19 @@
 <header>
 
 <!-- Header should contain brandings like logo-->
-<h1 class="uppercase">Sign up</h1>
+<h1 class="uppercase" ng-controller="SignUp">Sign In{{message}}</h1>
 </header>
-<article id="art1">
-<!-- removed <div and replaced with article-->
-<!-- Inline CSS below: -->
+<!-- removed <div and article removed-->
+<!-- Removed! Inline CSS below: -->
 <section>
-<h1 class="capitalize">For returning users</h1>
+<h1 class="capitalize"><!--Enter header 2 here--></h1>
 </section>
 <!-- End of inline CSS -->
 <section><form name="myForm" class="form" action = "http://wilder.azurewebsites.net/echo" method = "POST" onsubmit="return validateForm()">
-<input type="text"  maxlength=30 name="firstname" placeholder="First Name" id="userinput">
-<input type="text"  maxlength=30 name="surname" placeholder="Surname" id="userinput"><br/>
-<input type="text" name="email" placeholder="Email Address" id="userinput">
-<input type="text" name="confirmemail" placeholder="Confirm Email Address" id="userinput"><br/>
+<input type="text" required autocomplete="off" maxlength=30 name="firstname" placeholder="First Name" id="userinput">
+<input type="text" required autocomplete="off" maxlength=30 name="surname" placeholder="Surname" id="userinput"><br/>
+<input type="text" required autocomplete="off" name="email" placeholder="Email Address" id="userinput">
+<input type="text" required autocomplete="off" name="confirmemail" placeholder="Confirm Email Address" id="userinput"><br/>
 <br><input type="date" name="birthay"><br><br>
 <input type= "radio" name= "gender" value = "male"/>Male
 <input type= "radio" name= "gender" value = "female"/>Female<br/><br/><br/>
@@ -48,7 +50,7 @@
 <section><p>Just testing to see section 2</p></section>
 <aside><p>Just testing to view aside</p></aside>
 </article>--></div>
-<footer id="centernav">
+<!--<footer id="centernav">
 <ul>
 <li id="contact">Contact Information</li>
 <li>Social Media</li>
@@ -58,6 +60,5 @@
       <li>Privacy Policy</li>
 	  <li>Copyright Information</li>
 	  <li>Terms of Service</li>
-  </ul></footer>
-  </body>
+  </ul></footer>-->
 </html>

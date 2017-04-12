@@ -41,6 +41,10 @@ $('.submit').click(function() {
   $('#userinput').text(word);
 });
 
+var SignUp = function($scope) {
+    $scope.message = "Sign Up";
+}
+
 /*AJAX*/
 /*NODE*/
 /*UNIT TEST*/
