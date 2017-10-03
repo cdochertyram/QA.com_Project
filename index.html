@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Asset List</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="myController">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!--<a class="navbar-brand" href="#">Project A</a>-->
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Asset
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Asset List</a></li>
+                        <li><a href="#">Add Asset</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+            <form class="search">
+                
+                <input type="text" ng-model="searchString" placeholder="Search" />
+                <input type="checkbox" ng-model="searchStrict" />
+            </form>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+            <div id="form_wrapper">
+
+                <div class="showhide">
+                    <button class="showinghiding1" ng-click="showme=true">Add Asset</button>
+                    <button ng-click="showme=false" class="showinghiding2">Asset List</button>
+                </div>
+
+                <!--Asset List Table-->
+                <div ng-hide="showme">
+                    <div class="table1">
+
+                        <table align="center" class="assetlist">
+                            <thead>
+
+                                <tr>
+                                    <th class="thead">
+                                        <select ng-model="sortBy" class="filterMenu">
+                                            <option value="title">Title</option>
+                                            <option value="date">Purchase Date</option>
+                                            <option value="purchaseValue">Purchase Value</option>
+                                            <option value="residualValue">Residual Value</option>
+                                            <option value="years" ng-hide="hide">Useful Life</option>
+                                        </select>
+                                    </th>
+                                    <th class="thead" width="57px" ng-hide="hide"><input type="text" class="searchTitle" placeholder="Title" ng-model="searchString.title"/></th>
+                                    <th class="thead" width="84px" ng-hide="hide"><input type="text" class="searchPDate" placeholder="Purchase Date" ng-model="searchString.date"/></th>
+                                    <th class="thead" width="68px" ng-hide="hide"><input type="text" class="searchVal" placeholder="Value" ng-model="searchString.purchaseValue"/></th>
+                                    <th class="thead" width="98px" ng-hide="hide"><input type="text" class="searchRVal" placeholder="Residual Value" ng-model="searchString.residualValue"/></th>
+                                    <th class="thead" width="56px" ng-hide="hide"><input type="text" class="searchLife" placeholder="Life" ng-model="searchString.years"/></th>
+                                </tr>
+                               
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="asset in assets | orderBy:sortBy | filter:searchString : searchStrict | limitTo: rowLimit">
+                                    <td><input type="checkbox" ng-model="hide" /></td>
+                                    <td ng-hide="hide" >{{asset.title}}</td>
+                                    <td ng-hide="hide">{{asset.date | date: "MMMM d, y"}}</td>
+                                    <td ng-hide="hide">{{asset.purchaseValue | currency:"£"}}</td>
+                                    <td ng-hide="hide">{{asset.residualValue | currency:"£"}}</td>
+                                    <td ng-hide="hide">{{asset.years}} years</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="formbut" onclick="location.href='#!calculate'">Calculate Depreciation</button>
+                        <p class="noItems">
+                            No. Items
+                            <a href="#" ng-click="showMoreRows(2)">2</a>
+                            <a href="#" ng-click="showMoreRows(3)">3</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!--Add Asset Table-->
+                <div ng-show="showme">
+                    <div class="table1">
+                        <table align="center" class="assetlist">
+                            <thead>
+
+                                <tr>
+                                    <th class="thead">
+                                        <select ng-model="sortBy" class="filterMenu">
+                                            <option value="title">Title</option>
+                                            <option value="date">Purchase Date</option>
+                                            <option value="purchaseValue">Purchase Value</option>
+                                            <option value="residualValue">Residual Value</option>
+                                            <option value="years" ng-hide="hide">Useful Life</option>
+                                        </select>
+                                    </th>
+                                    <th class="thead" width="57px" ng-hide="hide"><input type="text" class="searchTitle" placeholder="Title" ng-model="searchString.title" /></th>
+                                    <th class="thead" width="84px" ng-hide="hide"><input type="text" class="searchPDate" placeholder="Purchase Date" ng-model="searchString.date" /></th>
+                                    <th class="thead" width="68px" ng-hide="hide"><input type="text" class="searchVal" placeholder="Value" ng-model="searchString.purchaseValue" /></th>
+                                    <th class="thead" width="98px" ng-hide="hide"><input type="text" class="searchRVal" placeholder="Residual Value" ng-model="searchString.residualValue" /></th>
+                                    <th class="thead" width="56px" ng-hide="hide"><input type="text" class="searchLife" placeholder="Life" ng-model="searchString.years" /></th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="asset in assets | orderBy:sortBy | filter:searchString : searchStrict | limitTo: rowLimit">
+                                    <td><input type="checkbox" ng-model="hide" /></td>
+                                    <td ng-hide="hide">{{asset.title}}</td>
+                                    <td ng-hide="hide">{{asset.date | date: "MMMM d, y"}}</td>
+                                    <td ng-hide="hide">{{asset.purchaseValue | currency:"£"}}</td>
+                                    <td ng-hide="hide">{{asset.residualValue | currency:"£"}}</td>
+                                    <td ng-hide="hide">{{asset.years}} years</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="formbut">Add Asset</button>
+                        <p class="noItems">
+                            No. Items
+                            <a href="#" ng-click="showMoreRows(2)">2</a>
+                            <a href="#" ng-click="showMoreRows(3)">3</a>
+                        </p>
+
+
+                        <!--<div class="signupright">
+                            <button class="formbut">Calculate Depreciation</button>
+                        </div>-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer class="container">
+        <ul class="list-inline">
+
+            <li><a class="white" href="">Privacy Policy</a></li>
+            <li><a class="white" href="">Terms of Use</a></li>
+            <li><a class="white" href="">Cookies</a></li>
+            <li class="white dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    &copy CDocherty 2017
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="white" href="https://www.mrisoftware.com/">MRI</a></li>
+                    <li><a class="white" href="https://www.realassetmgt.co.uk">Real Asset Management</a></li>
+                    <li><a href="https://www.twitter.com/misscdocherty">Twitter</a></li>
+                    <li><a class="white" href="https://www.linkedin.com/in/misscdocherty">Linkedin</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </footer>
+
+
+</body>
+</html>
