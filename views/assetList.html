@@ -1,0 +1,42 @@
+﻿
+    <table align="center" class="assetlist" id="table">
+        <thead>
+            <tr>
+                <th width="45px">
+                    <select ng-model="sortBy" class="localSearch">
+                        <option value="title">Title</option>
+                        <option value="ddate">Disposal Date</option>
+                        <option value="date">Purchase Date</option>
+                        <option value="residualValue">Residual Value</option>
+                        <option value="purchaseValue">Purchase Value</option>
+
+                    </select>
+                </th>
+                <th class="thead" ng-hide="hide"><input type="text" class="localSearch" placeholder="Title" ng-model="searchString.title" /></th>
+                <th class="thead" ng-hide="hide"><input type="text" class="localSearch" placeholder="Purchase Date" ng-model="searchString.date" /></th>
+                <th class="thead" ng-hide="hide"><input type="text" class="localSearch" placeholder="Purchase Value" ng-model="searchString.purchaseValue" /></th>
+                <th class="thead" ng-hide="hide"><input type="text" class="localSearch" placeholder="Disposal Date" ng-model="searchString.ddate" /></th>
+                <th class="thead" ng-hide="hide"><input type="text" class="localSearch" placeholder="Residual Value" ng-model="searchString.residualValue" /></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="asset in assets | orderBy:sortBy | filter:searchString : searchStrict | limitTo: rowLimit">
+                <td><input type="checkbox" ng-model="checked"/></td>
+                <td><a ng-href="#assetDetail/{{asset.assetId}}">{{asset.title}}</a></td>
+                <td>{{asset.date | date: "MMMM d, y"}}</td>
+                <td>{{asset.purchaseValue | currency:"£"}}</td>
+                <td>{{asset.ddate | date: "MMMM d, y"}}</td>
+                <td>{{asset.residualValue | currency:"£"}}</td>
+
+                
+            </tr>
+        </tbody>
+    </table>
+        <a class="formbut" ng-href="#/calculate" ng-disabled="!checked"  onclick="calculateDepreciation()"> Calculate Depreciation</a>
+        
+    <p class="noItems">
+        No. Items
+        <a ng-click="showMoreRows(2)">2</a>
+        <a ng-click="showMoreRows(3)">3</a>
+    </p>

@@ -1,0 +1,27 @@
+﻿<nav class="navbar navbar-inverse" ng-controller="myController">
+    <div class="container-fluid">
+        <div class="navbar-header">
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#/home">Home</a></li>
+            <li class="dropdown">
+                <div class="dropdown-toggle" data-toggle="dropdown">
+                    Asset
+                    <span class="caret"></span>
+                </div>
+                <ul class="dropdown-menu">
+                    <li><a href="#/assetList">Asset List</a></li>
+                    <li><a href="#/addAsset">Add Asset</a></li>
+                    <li><a href="#/calculate">Calculate Depreciation</a></li>
+                </ul>
+            </li>
+            <li><a href="#/help.html">Help</a></li>
+            <li><a href="#/login">Logout</a></li>
+        </ul>
+
+        <form class="search">
+            <input type="text" ng-change="setData()" ng-model="searchString" placeholder="Search" /> 
+            <input type="checkbox" ng-model="searchStrict" />
+        </form>
+    </div>
+</nav>

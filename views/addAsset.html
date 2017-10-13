@@ -1,0 +1,35 @@
+﻿    <table align="center" class="assetlist">
+        <thead>
+            <tr>
+                <th width="45px">
+                    <select ng-model="sortBy" class="localSearch">
+                        <option value="title">Title</option>
+                        <option value="ddate">Disposal Date</option>
+                        <option value="date">Purchase Date</option>
+                        <option value="residualValue">Residual Value</option>
+                        <option value="purchaseValue">Purchase Value</option>
+
+                    </select>
+                </th>
+                <th class="thead" ng-hide="hide"><input type="text" class="localSearch" placeholder="Title" ng-model="searchString.title" /></th>
+                <th class="thead" ng-hide="hide"><input type="text" class="localSearch" placeholder="Purchase Date" ng-model="searchString.date" /></th>
+                <th class="thead" ng-hide="hide"><input type="text" class="localSearch" placeholder="Purchase Value" ng-model="searchString.purchaseValue" /></th>
+                <th class="thead" ng-hide="hide"><input type="text" class="localSearch" placeholder="Disposal Date" ng-model="searchString.ddate" /></th>
+                <th class="thead" ng-hide="hide"><input type="text" class="localSearch" placeholder="Residual Value" ng-model="searchString.residualValue" /></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="asset in assets | orderBy:sortBy | filter:searchString : searchStrict" ng-hide="hide" >
+                <td><input type="checkbox" ng-model="asset.selected"/></td>
+                <td contenteditable="true" ></td>
+                <td contenteditable="true" ></td>
+                <td contenteditable="true" ></td>
+                <td contenteditable="true" ></td>
+                <td contenteditable="true" ></td>
+
+            </tr>
+        </tbody>
+    </table>
+            <button class="formbut" data-ng-click="addRow()">Add Assets</button>
+            <button class="formbut" data-ng-click="removeSelected()">Remove Assets</button>

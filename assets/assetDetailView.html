@@ -1,0 +1,35 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size:large">
+        {{::title}}
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-2">Title:</div>
+                    <div class="col-md-6">{{asset.title}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Purchase Date:</div>
+                    <div class="col-md-6">{{asset.date|date}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Disposal Date:</div>
+                    <div class="col-md-6">{{asset.ddate|date}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Purchase Value:</div>
+                    <div class="col-md-6">{{asset.purchaseValue|currency}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Residual Value:</div>
+                    <div class="col-md-6">{{asset.residualValue|currency}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Life:</div>
+                    <div class="col-md-6">{{asset.years}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

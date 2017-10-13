@@ -1,0 +1,295 @@
+﻿
+body {
+    padding-top: 2rem;
+    margin: 0 auto;
+    position: fixed;
+    overflow: scroll;
+    width: 100%;
+    top: -20px;
+    right: -40px;
+    bottom: -40px;
+    left: 0px;
+    text-align: center;
+    font-family: "Arial";
+    padding: 10px;
+    background-color: #eee;
+    background-image: url("http://cdn.wallpapersafari.com/40/92/HvIEnr.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.search {
+    position: fixed;
+    top: 6px;
+    right: 120px;
+}
+
+.mainvav {
+    position: fixed;
+    text-align: left;
+    text-decoration: none;
+    height: 40px;
+    background: #AAFFFFFF;
+}
+
+.mainnav ul {
+    margin: 0;
+    padding: 0;
+}
+
+    .mainnav ul li {
+        list-style: none;
+    }
+
+        .mainnav ul li a {
+            text-decoration: none;
+            float: left;
+            display: inline-block;
+            padding: 10px 20px;
+            color: black;
+        }
+
+            .mainnav ul li a:hover {
+                color: #8C73DF;
+                text-decoration: underline;
+            }
+
+p {
+    color: #000000;
+    font-family: "Arial";
+}
+
+#form_wrapper {
+    padding: 3px;
+    /*border: 5px solid white;*/
+    border-radius: 5px;
+    margin: 0 auto;
+    background-color: rgba(12, 18, 17, 0.44);
+    margin-top: 100px;
+    width: 500px;
+    height: 300px;
+}
+
+.form {
+    line-height: 0.5;
+}
+/*
+input[type=text] {
+  text-align: center;
+    width: 200px;
+  height: 10px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+    input[type=password] {
+        width: 178px;
+        height: 22px;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid black;
+        border-radius: 2px;
+    }
+        input[type=radio] {
+        font-size: 2px;
+    }
+        input[type=date] {
+        width: 200px;
+        height: 10px;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid black;
+        border-radius: 2px;
+    }
+    input[type=text]:focus {
+        background-color: rgba(0, 0, 0, 0.46);
+        color: white;
+        border: solid 0.2px white;
+    }
+        input[type=password]:focus {
+        background-color: rgba(0, 0, 0, 0.46);
+        color: white;
+        border: solid 0.2px white;
+    }    */
+.userInput {
+    height:22px;
+    width: 178px;
+    margin: 3px;
+    text-align: center;
+    font-size: 12px;
+
+
+}
+
+#container ul li a:hover {
+    list-style: none;
+}
+
+#centernav {
+    text-align: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+}
+
+#mainnav {
+    font-size: 0.75em;
+}
+/*Footer Style*/
+.white {
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.78);
+    text-decoration: none;
+    text-align: center;
+}
+    /*Footer Hover styles*/
+    .white:hover {
+        color: white;
+        text-decoration: underline;
+        font-size: 1em;
+    }
+
+footer ul {
+    margin: 0;
+    padding: 25px;
+    display: inline-block;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+}
+
+    footer ul li a: {
+        color: black;
+        text-decoration: none;
+    }
+
+.formlinks {
+    font-size: 12px;
+}
+
+#forgot {
+    font-size: 12px;
+}
+
+.ngViewbtn {
+    background-color: rgba(0, 0, 0, 0.46);
+    color: rgba(255, 255, 255, 0.78);
+    width: 235px;
+    text-align: right;
+    border: none;
+    font-family: Arial;
+}
+
+/*.signupleft {
+    float: left;
+    width: 250px;
+    height: 180px;
+}
+
+.signupright {
+    float: right;
+    width: 250px;
+    height: 180px;
+}*/
+
+.goButton {
+
+    float: right;
+    margin-right: 0px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.46);
+    color: rgba(255, 255, 255, 0.78);
+}
+
+    .goButton a:hover {
+        background-color: #f0435f;
+    }
+
+    .goButton a:focus {
+        background-color: #f0435f;
+    }
+
+.assetlist {
+    margin-top: 10px;
+    padding: 10px;
+    width: 95%;
+    table-layout: fixed;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.46);
+    font-size: 10px;
+}
+
+.table1 {
+    overflow: auto;
+    height: 270px;
+    margin-top: 5px;
+}
+
+.thead {
+    font-size: 11px;
+}
+
+.addasset {
+    float: left;
+    margin-left: 12px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+.formbut {
+    float: right;
+    margin-right: 12px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    background-color: rgba(0, 0, 0, 0.46);
+    color: rgba(255, 255, 255, 0.78);
+    width: 180px;
+    text-align: right;
+    border: none;
+    font-family: Arial;
+    text-align: center;
+    padding: 2px;
+    border-radius: 50px;
+}
+
+td {
+    background-color: rgba(0, 0, 0, 0.46);
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.noItems {
+    bottom: 10px;
+    position: absolute;
+    font-family: "Arial";
+    font-size: 12px;
+    right: 60px;
+}
+.localSearch {
+    width: 96%;
+    height: 14px;
+    font-size: 10px;
+    text-align: center;
+    margin: 2px;
+}
+.divContainer{
+    height: 15em;
+    position: relative
+}
+.formCentered{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
